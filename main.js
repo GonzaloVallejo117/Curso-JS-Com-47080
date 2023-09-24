@@ -1,59 +1,94 @@
-/* let numero = prompt("ingrese un numero:")
+//simulador de turnos medicos
+alert("Bienvenido a la central de turnos");
+let nombre = prompt("Ingresar nombre");
+let apellido = prompt("Ingresar apellido");
+let dni = prompt("ingresar DNI");
+//preguntar especialidad para el turno 
 
-if(numero == 4){
-    console.log("El valor es 4");
-}else if(numero < 4){
-    console.log("el valor es menor a 4")
-}else{
-    numero = numero + 5;
-    alert(numero);
+function imprimirTurno(nombre, apellido, dni, turnos) {
+    nombre = nombre
+    apellido = apellido
+    dni = dni
+    turnos = turnos
+    console.log(nombre + " " + apellido, "\n Dni: " + dni, "\n Su turno asignado es: " + turnos)
 }
- */
+function turnos(turnos){
+            if(turnos == 1) {
+                turnos = "11:45"
+                imprimirTurno(nombre, apellido, dni, turnos);
+            }else if(turnos == 2){
+                turnos = "12:45"
+                imprimirTurno(nombre, apellido, dni, turnos);
+            }else if(turnos == 3){
+                turnos = "13:45"
+                imprimirTurno(nombre, apellido, dni, turnos);
+            }else{
+                alert("Numero ingresado incorrecto")
+            }
 
-/* let nombre = "";
-let numero = 5;
-let esMenorA10 = numero < 10; //true
-
-if(nombre && esMenorA10 && numero == 5){ // false && true && True => False
-    console.log('hola mundo');
 }
-if(nombre || esMenorA10 || numero == 5){ // false || true|| True => False
-    console.log('hola mundo');
+
+let especialidad = Number(prompt("Ingresar para que especialidad desea el turno. (seleccione el numero correpondiente) \n 1- Cardiologia \n 2- Oftalmologia \n 3- Dermatologia \n 4-Finalizar"));
+
+while(especialidad != 4 ){
+    console.log("entra al ciclo")
+    switch (especialidad) {
+        case 1:
+            alert("Secretaria de cardiologia")
+            //ingresa el turno que desea elegir
+            turnos = Number(prompt("Turnos disponibles:(Ingrese el numero correspondiente a cada uno) \n 1- 11:45 \n 2- 12:45 \n 3- 13:45"))
+            if(turnos == 1) {
+                turnos = "11:45"
+                imprimirTurno(nombre, apellido, dni, turnos);
+            }else if(turnos == 2){
+                turnos = "12:45"
+                imprimirTurno(nombre, apellido, dni, turnos);
+            }else if(turnos == 3){
+                turnos = "13:45"
+                imprimirTurno(nombre, apellido, dni, turnos);
+            }else{
+                alert("Numero ingresado incorrecto")
+            }
+            break;
+        case 2:
+            alert("Secretaria de oftalmologia")
+            //ingresa el turno que desea elegir
+            turnos = Number(prompt("Turnos disponibles:(Ingrese el numero correspondiente a cada uno) \n 1- 11:45 \n 2- 12:45 \n 3- 13:45"))
+            if(turnos == 1) {
+                turnos = "11:45"
+                imprimirTurno(nombre, apellido, dni, turnos);
+            }else if(turnos == 2){
+                turnos = "12:45"
+                imprimirTurno(nombre, apellido, dni, turnos);
+            }else if(turnos == 3){
+                turnos = "13:45"
+                imprimirTurno(nombre, apellido, dni, turnos);
+            }else{
+                alert("Numero ingresado incorrecto")
+            }
+            break;
+        case 3:
+                alert("Secretaria de dermatologia")
+                //ingresa el turno que desea elegir
+                turnos = Number(prompt("Turnos disponibles:(Ingrese el numero correspondiente a cada uno) \n 1- 11:45 \n 2- 12:45 \n 3- 13:45"))
+                if(turnos == 1) {
+                    turnos = "11:45"
+                    imprimirTurno(nombre, apellido, dni, turnos);
+                }else if(turnos == 2){
+                    turnos = "12:45"
+                    imprimirTurno(nombre, apellido, dni, turnos);
+                }else if(turnos == 3){
+                    turnos = "13:45"
+                    imprimirTurno(nombre, apellido, dni, turnos);
+                }else{
+                    alert("Numero ingresado incorrecto")
+                }
+                break;
+        default:
+            alert("Opción incorrecta, vuelva a intentar")
+            break;
+    }
+    especialidad = Number(prompt("Ingresar para que especialidad desea el turno. (seleccione el numero correpondiente) \n 1- Cardiologia \n 2- Oftalmologia \n 3- Dermatologia \n 4-Finalizar"));
 }
 
-if(nombre || esMenorA10 && numero == 5){ // false || true && True => true
-    console.log('hola mundo');
-} */
-
-//EJERCICIO
-
-/* let numero = prompt("Ingrese un numero: ");
-
-if(numero > 10 && numero < 50){
-    alert("El número, está entre los valores de 10 y 50");
-}
-console.log("el numero es: " + numero); */
-
-//ejemplo
-
-//Pedir número mediante prompt y sumarle otro número en cada repetición,realizando una salida por cada resultado
-
-/* let numero= parseInt(prompt("Ingrese un numero: "))
-
-while (numero>=1) {
-    numero++
-    console.log("El resultado es: " + numero)
-    numero= parseInt(prompt("Ingrese un numero: "))
-} */
-
-//ejemplo 2
-
-//Pedir un texto mediante prompt, concatenar un valor en cada repetición, realizando una salida por cada resultado, hasta que se ingresa “ESC”.
-
-let texto = prompt("Ingrese un texto: ")
-let valor= 0
-while(texto != "ESC") {
-    valor++
-    console.log("Texto N°" + valor + "" +"ingresado es: " + texto);
-    texto = prompt("Ingrese otro texto: ");
-}
+alert("Hasta luego, que tenga buenas tadres.");
