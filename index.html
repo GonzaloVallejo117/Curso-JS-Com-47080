@@ -3,28 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos/estilos.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="/estilos/estilos.css">
+    <title>Home</title>
 </head>
 <body>
-    <div class="contenedor_padre">
-        <div class="nombreHospital">
-            <header>
-                <h1 id="encabezado_hospital">Hospital Rawson</h1>
-            </header>
+    <header>
+        <div class="contenedor_principal">
+            <h1 class="titulo">Central de Turnos</h1>
+            <button id="cerrarSesion">Cerrar Sesion</button>
         </div>
-        <div class="secciones">
-            <div class="seccionPacientes">
-                <button class="btn"><a href="./pacientes/portal_especialidades.html">Ingresar al Portal Pacientes</a></button>
-            </div>
-            <div class="seccionMedicos">
-                <button class="btn">
-                    <a href="./medicos/ingreso_portal_medicos.html">Ingresar al Portal Medicos</a>
-                </button>
-            </div>
+    </header>
+    <main id="main_index">
+        <div class="contenedor_formulario">
+            <h2>formulario</h2>
+            <form id="registroForm">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required><br><br>
+        
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" required><br><br>
+        
+                <label for="dni">DNI:</label>
+                <input type="text" id="dni" required><br><br>
+        
+                <label for="especialidad">Especialidad:</label>
+                <select id="especialidad">
+                    <option value="cardiologia">Cardiología</option>
+                    <option value="oftalmologia">Oftalmología</option>
+                    <option value="dermatologia">Dermatología</option>
+                </select><br><br>
+        
+                <label for="dia">Día del Turno:</label>
+                <select id="diaTurno">
+                    <option selected value="mensaje">Elije un Dia</option>
+                    <option value="Lunes">Lunes</option>
+                    <option value="Martes">Martes</option>
+                    <option value="Miercoles">Miercoles</option>
+                    <option value="Jueves">Jueves</option>
+                    <option value="Viernes">viernes</option>
+                    
+                </select><br><br>
+        
+                <label for="hora">Hora del Turno:</label>
+                <select id="horaTurno">
+                    <option value="mensaje">Selecciona un Horario</option>
+                    <option value="11:45">11:45</option>
+                    <option value="12:45">12:45</option>
+                    <option value="13:45">13:45</option>
+                    <option value="14:45">14:45</option>
+                    <option value="15:45">15:45</option>
+                    <option value="16:45">16:45</option>
+                </select><br><br>
+        
+                <input type="submit" value="Registrar Turno">
+            </form>
         </div>
-    </div>
-    
+        <div class="contenedor_turnos">
+            <h2>Turnos Solicitados</h2>
+            <ul id="pacientesRegistrados">
+                
+            </ul>
+        </div>
+    </main>
+    <script src="./js/main.js"></script>
 </body>
-<!-- <script src="./main.js"></script> -->
 </html>

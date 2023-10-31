@@ -3,42 +3,104 @@
     margin: 0;
     padding: 0;
 }
-.contenedor_padre{
-    width: 100%;
+
+section{
+    display: flex;
+    flex-wrap: wrap;
     height: 100vh;
-    border: 5px red solid;
-    display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
-    
+    padding: 1rem;
 }
 
-#encabezado_hospital{
-    font-size: 5rem;
+section h1{
+    font-size: 3rem;
 }
-.secciones{
-    width: 70%;
-    height: 50%;
-    display: flex;
-    margin: 15px;
-    justify-content:space-around;
-    align-items: center;
-}
-.btn{
-    width: 600px;
-    height: 250px;
-    background-color: #03e95b;
-    border-radius: 50px;
+
+section h2{
     text-align: center;
-    display: inline-block;
-    font-size: 2rem;
-    margin: 5px;
-    cursor: pointer;
+    width: 100%;
+    margin-bottom: 1rem;
+    font-size: 2.5rem;
 }
 
-a{
+section form{
+    padding: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 500px;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+
+section form label{
+    width: 100%;
+    padding: 0.2rem;
+    margin-bottom: 0.5rem;
+}
+section form input{
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    border-radius: 9px;
+    border: none;
+    outline-color: blue;
+    background-color: #eee;
+}
+
+section form input[type="submit"]{
+    margin-top: 1.5rem;
+    background-color: blue;
+    color: #fff;
+}
+section form input[type="submit"]:active{
+    transform: scale(0.97);
+}
+
+section p{
+    margin-top: 1.5rem;
+}
+
+section p a{
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: blue;
 }
 
+
+/* home */
+.contenedor_principal{
+    margin: 50px;
+    display: flex;
+    justify-content:space-between;
+    border: black solid;
+    ;
+}
+
+#cerrarSesion{
+    background-color: blue;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 9px;
+    margin:10px ;
+    font-size: 1rem;
+}
+
+#main_index{
+    border: solid black;
+    margin: 50px;
+    display: flex;
+    justify-content: space-between;
+    height: 80vh;
+}
+
+.contenedor_formulario{
+    border: solid black;
+    width: 100%;
+}
+
+.contenedor_turnos{
+    border: solid black;
+    width: 100%;
+}
