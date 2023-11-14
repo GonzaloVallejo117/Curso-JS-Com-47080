@@ -7,7 +7,7 @@ registroForm.addEventListener("submit", (e)=>{
     const email = document.querySelector("#email").value
     const password = document.querySelector("#password").value
 
-    //aca chequeo si el mail que se ingresa ya esta en el LOCALSTORAGE, SI esta NO no se guarda y NO existe se crea un usuario 
+    //aca chequeo si el mail que se ingresa ya esta en el LOCALSTORAGE, SI esta NO se guarda y si NO existe se crea un usuario 
     const usuarios = JSON.parse(localStorage.getItem("usuarios")) || []
     const usuarioRegistrado = usuarios.find(usuario => usuario.email === email);
     

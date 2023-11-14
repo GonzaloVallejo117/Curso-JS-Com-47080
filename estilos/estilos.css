@@ -100,7 +100,24 @@ section p a{
     width: 100%;
 }
 
-.contenedor_turnos{
+#contenedor_turnos{
     border: solid black;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    overflow-y: auto;
+}
+
+
+.turnoGenerado{
+    border:solid black;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    text-align:center;
+    margin: 10px;
+    padding: 10px;
+    
 }
