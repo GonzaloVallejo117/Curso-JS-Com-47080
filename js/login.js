@@ -1,3 +1,4 @@
+
 const loginForm = document.querySelector("#loginForm")
 
 loginForm.addEventListener("submit", (e)=>{
@@ -11,12 +12,25 @@ loginForm.addEventListener("submit", (e)=>{
     //busco en la base de datos si existe el mail y la contraseña que ingresa el usuairio
     const validacionUsuario = usuarios.find(usuario => usuario.email === email && usuario.password === password)
     // si ingreso alguno de los campos mal
-    if(!validacionUsuario){
-        alert("Usuario y/o contaseña incorrectos")
+    if(validacionUsuario){
+        Swal.fire({
+            icon: "success",
+            title: "¡Login exitoso!",
+            text: `¡Bienvenido, ${validacionUsuario.nombre}!`,
+        });
+        //guardo en el local storage y lo redirijo al index
+        setTimeout(() => {
+            localStorage.setItem("login_exitoso", JSON.stringify(validacionUsuario))
+            window.location.href = "index.html" 
+            
+        }, 2000);
+        
+    }else{
+        Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Usuario y/o contraseña incorrectos",
+        });
         loginForm.reset()
     }
-    //muesto el nombre del usuario que ingreso
-    alert(`Bienvenido ${validacionUsuario.nombre}`)
-    localStorage.setItem("login_exitoso", JSON.stringify(validacionUsuario))
-    window.location.href = "index.html" 
 })

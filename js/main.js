@@ -6,10 +6,25 @@ if(!usuario){
 
 const cerrarSesion = document.querySelector("#cerrarSesion");
 cerrarSesion.addEventListener("click", ()=>{
-  alert("hasta pronto")
-  //vaciar el storage login_exitoso
-  localStorage.removeItem('login_exitoso');
-  window.location.href = "login.html"
+  Swal.fire({
+    title: "Desea cerrar la sesión?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Cerrar sesión"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        title: "Sesión finalizada",
+        icon: "success"
+      });
+      localStorage.removeItem('login_exitoso');
+      setTimeout(() => {
+        window.location.href = "login.html"
+      }, 2000);
+    }
+  })
 })
 
 
@@ -48,7 +63,21 @@ function imprimirTurno(PersonaTurno, indice){
 
   let btnEliminar = container.querySelector(".eliminarTurno");
   btnEliminar.addEventListener("click", function(){
-    eliminarTurno(indice);
+    Swal.fire({
+      title: "Desea eliminar el turno?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Si",
+      denyButtonText: `No`
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        Swal.fire("Turno eliminado", "", "success");
+        eliminarTurno(indice);
+      } else if (result.isDenied) {
+        Swal.fire("El turno no ha sido eliminado", "", "info");
+      }
+    });
   })
   return container;
 }
@@ -72,7 +101,11 @@ if (localStorage.getItem("turnosGenerados")) {
 // evento para manejar el envío del formulario
 registroForm.addEventListener("submit", function (event) {
     event.preventDefault(); // Evita el envío del formulario
-
+    
+    Swal.fire({
+      icon: "success",
+      title: "Turno generado con exito",
+  });
     // obtengo los valores del formulario
     const nombre = document.getElementById("nombre").value;
     const apellido = document.getElementById("apellido").value;
@@ -80,8 +113,6 @@ registroForm.addEventListener("submit", function (event) {
     const especialidad = document.getElementById("especialidad").value;
     const diaTurno = document.getElementById("diaTurno").value;
     const horaTurno = document.getElementById("horaTurno").value;
-
-    
     
     // Construye el mensaje con los datos del turno
     let nuevoTurno = new PersonaTurno(nombre,apellido,dni,especialidad,diaTurno,horaTurno)

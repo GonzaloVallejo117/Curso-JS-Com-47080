@@ -13,18 +13,29 @@ registroForm.addEventListener("submit", (e)=>{
     
     //valido si ya esta registrado(probar usuarioRegistrado ? return alert("usuario ya registrado"))
     if(usuarioRegistrado){
-        return alert("usuario ya registrado")
-    }
-    //sino esta registrado lo guardo en la base de datos USUARIOS
+        Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Usuario ya registrado",
+        });
+    }else{
+        //sino esta registrado lo guardo en la base de datos USUARIOS
+        Swal.fire({
+            icon: "success",
+            title: "Registro exitoso",
+        });
+        setTimeout(() => {
+            
+            usuarios.push({
+                nombre: nombre,
+                email: email,
+                password: password,
+            })
+            //guardo en Storage
+            localStorage.setItem("usuarios",JSON.stringify(usuarios))
+            //redireccion a login
+            window.location.href = "login.html"
+        }, 2000);
 
-    usuarios.push({
-        nombre: nombre,
-        email: email,
-        password: password,
-    })
-    //guardo en Storage
-    localStorage.setItem("usuarios",JSON.stringify(usuarios))
-    alert("Registro Exitoso");
-    //redireccion a login
-    window.location.href = "login.html"
+    }
 })
