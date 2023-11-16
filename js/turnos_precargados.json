@@ -1,0 +1,43 @@
+
+[
+    {"nombre":"Carlos",
+    "apellido":"Alvarez",
+    "dni": "14578222",
+    "especialidad" : "Cardiología",
+    "diaTurno" : "Lunes",
+    "horaTurno" : "11:30"
+    },
+
+    {"nombre":"Juan",
+    "apellido":"Vallejo",
+    "dni": "12754856",
+    "especialidad" : "Dermatología",
+    "diaTurno" : "Viernes",
+    "horaTurno" : "15:45"
+    },
+
+    {"nombre":"Jose",
+    "apellido":"Perez",
+    "dni": "47589687",
+    "especialidad" : "Cardiología",
+    "diaTurno" : "Miercoles",
+    "horaTurno" : "14:50"
+    },
+
+    {"nombre":"Candela",
+    "apellido":"Nieto",
+    "dni": "74569823",
+    "especialidad" : "Oftalmología",
+    "diaTurno" : "Martes",
+    "horaTurno" : "18:15"
+    }
+
+
+
+
+
+
+
+
+
+]

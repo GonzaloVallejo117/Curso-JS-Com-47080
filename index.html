@@ -11,16 +11,21 @@
 <body>
     <header>
         <div class="contenedor_principal">
-            <h1 class="titulo">Central de Turnos</h1>
-            <button id="cerrarSesion">Cerrar Sesion</button>
+            <div>
+                <h1 class="titulo">Central de Turnos</h1>
+            </div>
+            <div class="contenedor_btns">
+                <button id="cerrarSesion">Cerrar Sesion</button>
+                <button id="turnosPrecargados">Turnos Precargados</button>
+            </div>
         </div>
     </header>
     <main id="main_index">
         <div class="contenedor_formulario">
-            <h2>formulario</h2>
+            <h2>POR FAVOR RELLENE EL FORMULARIO PARA CARGAR EL TURNO</h2>
             <form id="registroForm">
                 <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" required><br><br>
+                <input type="text" id="nombre"  required><br><br>
         
                 <label for="apellido">Apellido:</label>
                 <input type="text" id="apellido" required><br><br>
@@ -30,9 +35,9 @@
         
                 <label for="especialidad">Especialidad:</label>
                 <select id="especialidad">
-                    <option value="cardiologia">Cardiología</option>
-                    <option value="oftalmologia">Oftalmología</option>
-                    <option value="dermatologia">Dermatología</option>
+                    <option value="Cardiología">Cardiología</option>
+                    <option value="Oftalmología">Oftalmología</option>
+                    <option value="Dermatología">Dermatología</option>
                 </select><br><br>
         
                 <label for="dia">Día del Turno:</label>

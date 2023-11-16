@@ -77,7 +77,11 @@ section p a{
     ;
 }
 
-#cerrarSesion{
+.contenedor_btns{
+    padding-right: 50px;
+}
+
+#cerrarSesion ,#turnosPrecargados{
     background-color: blue;
     color: #fff;
     border: none;
