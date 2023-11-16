@@ -77,7 +77,9 @@ function imprimirTurno(PersonaTurno, indice) {
     <p>Especialidad: ${PersonaTurno.especialidad}</p>
     <p>Día: ${PersonaTurno.diaTurno}</p>
     <p>Hora: ${PersonaTurno.horaTurno}</p>
-    <button class="eliminarTurno" data-indice="${indice}">Eliminar</button>
+    <button class="eliminarTurno" data-indice="${indice}">
+    <i class="bi bi-trash"></i>
+    </button>
   `;
 
   // agrega un evento al boton de eliminar
